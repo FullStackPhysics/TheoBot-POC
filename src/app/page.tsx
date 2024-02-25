@@ -1,46 +1,10 @@
-import { LemonSqueezy } from '@/components/LemonSqueezy';
-import ThemeToggle from '@/components/theme/theme-toggle';
-import { ArrowUpRightIcon } from '@iconicicons/react';
-import { Button, Tooltip } from '@lemonsqueezy/wedges';
-import Link from 'next/link';
+import ChatMessage from '@/components/chat/chat-message';
 
 export default function Home() {
   return (
-    <main className='flex wg-bg-grey-500 min-h-screen flex-col items-center justify-center'>
-      <div className='container px-10 space-y-10 max-w-4xl py-24'>
-        <h1 className='text-5xl font-medium md:text-6xl text-balance text-gray dark:text-white text-center'>
-          Build faster with Wedges. An open-source collection of UI components for React.
-        </h1>
-
-        <p className='text-lg text-surface-700 leading-relaxed text-balance text-center'>
-          An ever-expanding, open-source React UI library built with the Wedges Design System, Radix primitives, and
-          Tailwind CSS.
-        </p>
-
-        <div className='text-center'>
-          <ThemeToggle />
-        </div>
-
-        <div className='flex justify-center gap-8'>
-          <Button asChild variant='link' before={<ArrowUpRightIcon />}>
-            <Link href='https://www.lemonsqueezy.com/wedges/docs' target='_blank'>
-              Documentation
-            </Link>
-          </Button>
-
-          <Button asChild variant='link' before={<ArrowUpRightIcon />}>
-            <Link href='https://www.lemonsqueezy.com/wedges/figma' target='_blank'>
-              Figma
-            </Link>
-          </Button>
-        </div>
-
-        <div className='flex text-sm text-surface-600 items-center justify-center pt-16 gap-3'>
-          <span>Brought to you by </span>
-          <a className='flex items-center gap-2' href='https://www.lemonsqueezy.com' target='_blank'>
-            <LemonSqueezy />
-          </a>
-        </div>
+    <main className='relative h-full w-full flex-1 overflow-auto transition-width wg-bg-grey-500'>
+      <div role='presentation' className='flex h-full flex-col'>
+        <ChatMessage />
       </div>
     </main>
   );

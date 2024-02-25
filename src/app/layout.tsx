@@ -16,14 +16,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     // 'dark' theme is added here
-    <html lang='en' className='wg-antialiased' suppressHydrationWarning>
-      <body className={`${inter.className} flex bg-wg-white dark:bg-wg-gray-800`}>
+    <html lang='en' className='wg-antialiased h-full' suppressHydrationWarning>
+      <body className={`${inter.className} flex bg-wg-white dark:bg-wg-gray-800 h-full max-w-full`}>
         <Providers>
           <Sidebar>
             <SidebarItem icon={<HomeIcon />} text='Home' active={true} alert={false} />
             <SidebarItem icon={<CalendarIcon />} text='Calendar' active={false} alert={true} />
           </Sidebar>
-          {children}
+          <div className='relative flex h-full max-w-full flex-1 flex-col overflow-hidden'>{children}</div>
         </Providers>
       </body>
     </html>
