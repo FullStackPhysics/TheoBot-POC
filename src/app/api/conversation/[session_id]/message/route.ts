@@ -4,6 +4,8 @@ import { AddMessageRequest, ChatBotMessage } from '@/types/message';
 import axios from 'axios';
 import { NextRequest } from 'next/server';
 
+export const maxDuration = 300;
+
 export async function POST(req: NextRequest, { params }: { params: { session_id: string } }) {
   const body: AddMessageRequest = await req.json();
 
